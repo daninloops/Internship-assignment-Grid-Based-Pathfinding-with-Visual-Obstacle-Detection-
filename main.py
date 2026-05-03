@@ -81,7 +81,7 @@ def astar(grid,start,goal):#define the A* algortihm through funtion
             continue 
         closed_set.add(current)#marked as fully explored before checking neighbours 
 
-        directions=[(-1,0),(1,0),(0,-1),(0,1)]#up,down,left,right directions which can be travelled in 
+        directions=[(-1,0),(1,0),(0,-1),(0,1)]#up,down,left,right directions which can be travelled in
         for dr,dc in directions:
             nr=row+dr
             nc=col+dc
@@ -100,7 +100,7 @@ def astar(grid,start,goal):#define the A* algortihm through funtion
 
             if new_g<g_score.get(neighbour,float('inf')):
                 #found a cheaper path to this neighbour- update everything 
-                #float('inf) is default for unvisited cells- any real cost beats it 
+                #float('inf') is default for unvisited cells- any real cost beats it 
                 g_score[neighbour]=new_g
                 h=abs(nr-goal[0])+abs(nc-goal[1])#manhattan distance to goal 
                 f=new_g+h#total score=actual +estimate
